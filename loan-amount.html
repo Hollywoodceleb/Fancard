@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport"
+    content="width=device-width, height=device-height, initial-
+    scale=1">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <title>loan amount</title>
+
+</head>
+<body>
+    <div class="tab-pane" id="tab4">
+        <h3 class="block">How much loan do you want?</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+
+                    <label class="control-label col-md-4">How much money do you want? <span class="required"> *</span></label>
+                    <div class="col-md-8">
+                        <input type="text" name="loanamount" value="" id="loanamount" class="form-control input-circle" maxlength="6" placeholder="Loan Amount Requested" onBlur="calculateInstallment();" required="">
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+
+                    <label class="control-label col-md-4">How long do you want it for?(Months) <span class="required"> *</span></label>
+                    <div class="col-md-8">
+                        <select class="form-control input-circle" name="loanduration" id="loanduration" aria-required="true" aria-describedby="select-error" aria-invalid="true" onChange="calculateInstallment()" required>
+
+                            <option value="">Select...</option>
+
+                            <option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option>
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label col-md-4">Monthly Installments <span class="required"> *</span></label>
+                    <div class="col-md-8">
+                        <input type="text" readonly name="monthlyinstallment" value="" id="monthlyinstallment" class="form-control input-circle" placeholder="0.00" required>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label col-md-4">Reason For Loan <span class="required"> *</span></label>
+                    <div class="col-md-8">
+                        <select class="form-control input-circle" name="PurposeKey" aria-required="true" aria-describedby="select-error" aria-invalid="true" required>
+
+                            <option value="">Select...</option>
+                            <option value="2">OTHERS</option>
+                            <option value="3">BUSINESS</option>
+                            <option value="4">Rent</option>
+                            <option value="5">School Fees</option>
+                            <option value="6">Medical Bills</option>
+                            <option value="7">Car Maintenance</option>
+                            <option value="8">Day to Day Expenses</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+
+        <a href="bankinfo.html">
+            <button type="back" class="button1">Next</button>
+
+
+            <script>
+
+                function calculateInstallment() {
+
+                    var p = parseInt(document.getElementById("loanamount").value); //principal
+
+                    var t = parseInt(document.getElementById("loanduration").value); //time
+
+                    var m = 0.04; //managemnt fee
+
+                    var r = 0.04; //rate
+
+
+
+                    mi = (((p+(p*m))+((p+(p*m))*r*t)) / t);
+
+                    var monthlyinstallment = mi.toFixed(2);
+
+                    document.getElementById("monthlyinstallment").value = ""+ monthlyinstallment;
+
+                }
+
+
+
+            </script>
+            <style>
+                body {
+                    background-color: #5342;
+                }
+                input {
+                    width: 270px;
+                    height: 30px;
+                    border-radius: 50px;
+                    border-block: double;
+                }
+                .button1 {
+                    width: 25%;
+                    padding: 4px;
+                    border: double;
+                    margin: 0.2px;
+                    background-color: green;
+                    margin-left: 70%;
+                }
+                select {
+                    width: 270px;
+                    height: 30px;
+                    border-radius: 50px;
+                    border-block: double;
+                }
+
+            </style>
+
+        </body>
+    </html>

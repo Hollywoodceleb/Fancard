@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport"
+content="width=device-width, height=device-height, initial-
+scale=1">
+<head>
+</head>
+<body>
+    <div class="tab-pane active," id="tab1">
+        <h3 class="block">Provide your personal details</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+
+                    <label class="control-label col-md-4">Title <span class="required"> *</span></label>
+                    <div class="col-md-8">
+                        <select name="Title" id="" class="form-control input-circle" required>
+                            <option value="">Select ...</option>
+                            <option value="1">MR.</option>
+                            <option value="2">MRS</option>
+                            <option value="3">MISS</option>
+                            <option value="4">CHIEF</option>
+                            <option value="5">DR.</option>
+                            <option value="6">PROF.</option>
+                            <option value="7">SIR</option>
+                            <option value="8">LADY</option>
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+
+                    <label class="control-label col-md-4">First Name <span class="required"> *</span></label>
+                    <div class="col-md-8">
+                        <input type="text" name="FirstName" class="form-control input-circle" placeholder="First Name" value="" required>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label col-md-4">Middle Name</label>
+                    <div class="col-md-8">
+                        <input type="text" name="MiddleName" class="form-control input-circle" placeholder="Middle Name" value="">
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label col-md-4">Surname <span class="required"> *</span></label>
+                    <div class="col-md-8">
+                        <input type="text" name="LastName" class="form-control input-circle" placeholder="Last Name" value="" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label col-md-4">Date of Birth <span class="required"> *</span></label>
+                    <script>
+                        function getAge() {
+                            var dateString = document.getElementById("mydate").value;
+                            if (dateString != "") {
+                                var today = new Date();
+                                var birthDate = new Date(dateString);
+                                var age = today.getFullYear() - birthDate.getFullYear();
+                                var m = today.getMonth() - birthDate.getMonth();
+                                var da = today.getDate() - birthDate.getDate();
+                                if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                                    age---;
+                                }
+                                if (m < 0) {
+                                    m += 12;
+                                }
+                                if (da < 0) {
+                                    da += 30;
+                                }
+
+                                if (age < 18 || age > 100) {
+                                    $msg = alert("You must be 18 and above");
+                                    exit();
+                                }
+                                /*else {
+
+alert("Age "+age+" is allowed");
+}
+} else {
+alert("please provide your date of birth");*/
+                            }
+                        }
+                    </script>
+                    <div class="col-md-8">
+                        <input name="BirthDate" type="date" class="form-control input-circle" id="mydate" data-lang="en" max="2005-01-02" data-format="YYYY-MM-DDTh:m:s" data-placeholder="Only 18 and above can apply for a loan" required aria-required="true" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label col-md-4">Gender <span class="required"> *</span></label>
+                    <div class="col-md-8">
+                        <select class="form-control input-circle" name="Gender" aria-required="true" aria-describedby="select-error" aria-invalid="true" required>
+                            <option value="">Select...</option>
+                            <option value="1">Male</option><option value="Female">Female</option>                                                                </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label col-md-4">Email Address <span class="required"> *</span></label>
+                    <div class="col-md-8">
+                        <input type="email" name="Email" class="form-control input-circle" aria-required="true" placeholder="Email Address" value="" required>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label col-md-4">Phone Number <span class="required"> *</span> </label>
+                    <div class="col-md-8">
+                        <input type="text" name="PhoneNo" class="form-control input-circle" placeholder="Mobile Number" value="" onkeypress="return isNumberKey(evt);" required maxlength="11">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label col-md-4">Marital Status <span class="required"> *</span></label>
+                    <div class="col-md-8">
+                        <select class="form-control input-circle" name="MaritalStatus" aria-required="true" aria-describedby="select-error" aria-invalid="true" required>
+
+                            <option value="">Select...</option>
+
+                            <option value="Single">Single</option><option value="Married">Married</option><option value="Divorced">Divorced</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label col-md-4">Level Of Education <span class="required"> *</span></label>
+                    <div class="col-md-8">
+                        <select name="EducationLevel" id="EducationLevel" class="form-control input-circle" required>
+                            <option selected="selected" value=""></option>
+                            <option value="No Education">No Education</option>
+                            <option value="Secondary School">Secondary School</option>
+                            <option value="College">College</option>
+                            <option value="B.Sc">B.Sc</option>
+                            <option value="Master's Degree">Master's Degree</option>
+
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </div>
+        </div>
+    </div>
+                   <br><br>
+
+                <a href="address.html">
+                    <button type="back" class="button1">Next</button>
+
+
+<style>
+body {
+background-color: #5342;
+}
+input {
+width: 270px;
+height: 30px;
+border-radius: 50px;
+border-block:  ;
+}
+select {
+width: 270px;
+height: 30px;
+border-radius: 50px;
+border-block:  ;
+}
+button {
+width: 25%;
+padding: 4px;
+border: ;
+margin: 0.2px;
+background-color: green;
+margin-left: 70%;
+}
+
+
+</style>
+</body>
+
+</html>
